@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>About Us - Joel Clinic</title>
+</head>
+<body>
+    <div class="background-animation"></div>
+  
+    
+    <header>
+        <h1>About Joel Clinic</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="patient-info.html">Patient Info</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="appointment.html">Book Appointment</a></li>
+                <li><a href="events.html">News/Events</a></li>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>History of Joel Clinic</h2>
+        <p>Joel Clinic was established to provide quality healthcare...</p>
+        
+        <h3>Meet Our Team</h3>
+        <div id="team-list">
+            <div class="team-member">
+                <img src="IMG.jpg" alt="Dr. Joel Smith" class="team-photo">
+                <h4>Dr. Joel Smith</h4>
+                <p>Founder and General Practitioner</p>
+                <p>Dr. Joel has over 15 years of experience</p> 
+                <p>Phone: <a href="tel:0705574993">0705574993</a></p>
+                <p>WhatsApp: <a href="https://wa.me/0705574993" target="_blank">Chat with us</a></p>
+                <p>Facebook: <a href="https://facebook.com/juma joel" target="_blank">Follow us on Facebook</a></p>
+
+            </div>
+            <div class="team-member">
+                <img src="image1.jpg" alt="Dr. Emily Davis" class="team-photo">
+                <h4>Dr. Emily Davis</h4>
+                <p>Specialist in Internal Medicine</p>
+                <p>Dr. Emily is known for her expertise in chronic disease management and preventive care.</p>
+                <p>Phone: <a href="tel:0705574993">0705574993</a></p>
+                <p>WhatsApp: <a href="https://wa.me/0770704555" target="_blank">Chat with us</a></p>
+                <p>Facebook: <a href="https://facebook.com/oundo vicent oguttu" target="_blank">Follow us on Facebook</a></p>
+
+            </div>
+        </div>
+
+        <input type="text" id="new-member" placeholder="Add a new team member">
+        <button onclick="addTeamMember()">Add Member</button>
+
+        <h3>Contact Us</h3>
+        <p>If you have any questions, feel free to reach out!</p>
+        <p>Phone: <a href="tel:+123456789">+1 (234) 567-890</a></p>
+        <p>WhatsApp: <a href="https://wa.me/123456789" target="_blank">Chat with us</a></p>
+        <p>Facebook: <a href="https://facebook.com/joelclinic" target="_blank">Follow us on Facebook</a></p>
+
+        <h3>Upload Your Photos</h3>
+        <input type="file" id="photo-upload" accept="image/*">
+        <button onclick="uploadPhoto()">Upload Photo</button>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Joel Clinic. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        function addTeamMember() {
+            const newMember = document.getElementById('new-member').value;
+            if (newMember) {
+                const teamList = document.getElementById('team-list');
+                const newEntry = document.createElement('div');
+                newEntry.className = 'team-member';
+                newEntry.innerHTML = `<h4>${newMember}</h4><p>Additional info here...</p>`;
+                teamList.appendChild(newEntry);
+                document.getElementById('new-member').value = ''; // Clear input
+            }
+        }
+
+        function uploadPhoto() {
+            const fileInput = document.getElementById('photo-upload');
+            if (fileInput.files.length > 0) {
+                const file = fileInput.files[0];
+                alert(`Photo ${file.name} uploaded successfully!`);
+                // Add functionality for actual file upload handling here
+            } else {
+                alert('Please select a photo to upload.');
+            }
+        }
+    </script>
+
+    <style>
+        .team-member {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .team-photo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%; /* Makes the image circular */
+            margin-right: 20px;
+        }
+        #team-list {
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</body>
+</html>
